@@ -3,16 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
     <meta name="apple-mobile-web-app-title" content="Клуб четырех коней" />
     <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="preload" href="./assets/fonts/golos/GolosText-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="preload"
+      href="./assets/fonts/golos/GolosText-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <title>Клуб четырех коней</title>
   </head>
-  <body></body>
+  <body>
+    <section class="banner">
+      <div class="banner__container">
+        <header class="banner__header">
+          <div class="banner__brand">
+            <img
+              class="banner__logo"
+              src="./assets/images/logo.png"
+              alt="Клуб четырех коней"
+            />
+            <p class="banner__brand-text">
+              Клуб<br />
+              четырех коней
+            </p>
+          </div>
+        </header>
+
+        <div class="banner__content">
+          <h1 class="banner__title">
+            <span class="banner__title-line"
+              >Превратите<br />
+              уездный город</span
+            >
+            <span class="banner__title-line banner__title-line--right">
+              в столицу<br />
+              земного шара
+            </span>
+          </h1>
+
+          <p class="banner__description">
+            Оплатите взнос на телеграммы для организации<br />
+            Международного васюкинского турнира по шахматам
+          </p>
+
+          <div class="banner__actions">
+            <a class="button button--primary" href="#support">
+              Поддержать шахматную мысль
+            </a>
+            <a class="button button--secondary" href="#info">
+              Подробнее о турнире
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner__decor">
+        <div class="banner__chess-horse"></div>
+        <div class="banner__chess-pawn"></div>
+        <div class="banner__texture"></div>
+        <div class="banner__city">
+          <div class="banner__city-outline"></div>
+          <div class="banner__city-image"></div>
+        </div>
+        <div class="banner__chess-queen"></div>
+        <div class="banner__chess-king"></div>
+        <svg class="banner__circle" viewBox="0 0 100 100">
+          <path d="M 0,50 a 50,50 0 1,1 0,1 z" fill="#FBCE51"></path>
+
+          <path
+            id="banner-circle-path"
+            d="M 4,50 a 46,46 0 1,1 0,1 z"
+            fill="none"
+          />
+
+          <text
+            class="banner__circle-text"
+            startOffset="100%"
+            aria-hidden="true"
+          >
+            <textPath
+              class="banner__circle-text-path"
+              href="#banner-circle-path"
+            >
+              Из Васюков полетят сигналы на Марс • Из Васюков полетят сигналы на
+              Марс • Из Васюков полетят сигналы на Марс • Из Васюков полетят
+              сигналы на Марс • Из Васюков полетят сигналы на Марс •
+            </textPath>
+          </text>
+        </svg>
+      </div>
+    </section>
+  </body>
 </html>
