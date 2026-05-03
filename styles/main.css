@@ -1,0 +1,30 @@
+@import "./reset.css";
+@import "./fonts.css";
+@import "./variables.css";
+
+html {
+  font-family: var(--font-main);
+  line-height: 1.5rem;
+  font-size: 16px;
+  background-color: var(--color-secondary-950);
+  scroll-behavior: smooth;
+  color: var(--color-secondary-50);
+  overflow-x: clip;
+  overscroll-behavior-y: contain;
+}
+body {
+  overscroll-behavior-y: contain;
+  overflow-x: clip;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
