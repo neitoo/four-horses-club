@@ -31,19 +31,13 @@
   </head>
   <body>
     <section class="banner">
-      <div class="banner__container">
+      <div class="container banner__container">
         <header class="banner__header">
-          <div class="banner__brand">
-            <img
-              class="banner__logo"
-              src="./assets/images/logo.png"
-              alt="Клуб четырех коней"
-            />
-            <p class="banner__brand-text">
-              Клуб<br />
-              четырех коней
-            </p>
-          </div>
+          <img
+            class="banner__logo"
+            src="./assets/images/logo.svg"
+            alt="Клуб четырех коней"
+          />
         </header>
 
         <div class="banner__content">
@@ -52,23 +46,25 @@
               >Превратите<br />
               уездный город</span
             >
-            <span class="banner__title-line banner__title-line--right">
-              в столицу<br />
+            <span class="banner__title-line banner__title-line--mid"
+              >в столицу</span
+            >
+            <span class="banner__title-line banner__title-line--end">
               земного шара
             </span>
           </h1>
 
           <p class="banner__description">
-            Оплатите взнос на телеграммы для организации<br />
-            Международного васюкинского турнира по шахматам
+            Оплатите взнос на телеграммы для&nbsp;организации Международного
+            васюкинского турнира по&nbsp;шахматам
           </p>
 
           <div class="banner__actions">
             <a class="button button--primary" href="#support">
-              Поддержать шахматную мысль
+              Поддержать шахматную&nbsp;мысль
             </a>
             <a class="button button--secondary" href="#info">
-              Подробнее о турнире
+              Подробнее о&nbsp;турнире
             </a>
           </div>
         </div>
@@ -78,10 +74,7 @@
         <div class="banner__chess-horse"></div>
         <div class="banner__chess-pawn"></div>
         <div class="banner__texture"></div>
-        <div class="banner__city">
-          <div class="banner__city-outline"></div>
-          <div class="banner__city-image"></div>
-        </div>
+        <div class="banner__city"></div>
         <div class="banner__chess-queen"></div>
         <div class="banner__chess-king"></div>
         <svg class="banner__circle" viewBox="0 0 100 100">
@@ -110,5 +103,32 @@
         </svg>
       </div>
     </section>
+    <section class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          <span>Дело помощи утопающим — дело рук самих утопающих!</span>
+
+          <svg class="marquee__sep" viewBox="0 0 6 6">
+            <circle cx="3" cy="3" r="3" fill="white" />
+          </svg>
+
+          <span
+            >Шахматы двигают вперед не только культуру, но и экономику!</span
+          >
+
+          <svg class="marquee__sep" viewBox="0 0 6 6">
+            <circle cx="3" cy="3" r="3" fill="white" />
+          </svg>
+
+          <span>Лед тронулся, господа присяжные заседатели!</span>
+
+          <svg class="marquee__sep" viewBox="0 0 6 6">
+            <circle cx="3" cy="3" r="3" fill="white" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
