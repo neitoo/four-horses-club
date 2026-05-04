@@ -219,7 +219,7 @@ img {
 }
 .banner__chess-horse {
   position: absolute;
-  background: url(../assets/images/chess-3.png);
+  background: url(../assets/images/chess-3.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -249,7 +249,7 @@ img {
 }
 .banner__chess-pawn {
   position: absolute;
-  background: url(../assets/images/chess-4.png);
+  background: url(../assets/images/chess-4.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -279,14 +279,14 @@ img {
 .banner__texture {
   position: absolute;
   inset: 0;
-  background-image: url("../assets/images/texture.png");
+  background-image: url("../assets/images/texture.webp");
   background-repeat: repeat;
   z-index: 4;
   mix-blend-mode: color-burn;
 }
 .banner__city {
   position: absolute;
-  background: url(../assets/images/city.png) no-repeat;
+  background: url(../assets/images/city.webp) no-repeat;
   width: 100%;
   height: 460px;
   left: 0;
@@ -313,7 +313,7 @@ img {
 }
 .banner__chess-queen {
   position: absolute;
-  background: url(../assets/images/chess-2.png);
+  background: url(../assets/images/chess-2.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -343,7 +343,7 @@ img {
 }
 .banner__chess-king {
   position: absolute;
-  background: url(../assets/images/chess-1.png);
+  background: url(../assets/images/chess-1.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
