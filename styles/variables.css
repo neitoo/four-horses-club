@@ -2,11 +2,13 @@
   --color-secondary-950: #1f1f1f;
   --color-secondary-900: #313131;
   --color-secondary-500: #595653;
+  --color-secondary-300: #d0d0d0;
   --color-secondary-50: #ffffff;
 
   --color-primary: #e9ded4;
   --color-accent-1: #f54932;
   --color-accent-2: #fbce51;
+  --color-accent-3: #3057a2;
 
   --font-main: "Golos Text", sans-serif;
   --font-accent: "Merriweather", serif;
