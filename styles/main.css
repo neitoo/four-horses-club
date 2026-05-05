@@ -34,6 +34,53 @@ img {
   max-width: 1242px;
 }
 
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes circleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  will-change: transform, opacity;
+}
+
 /* Баннер */
 .banner {
   position: relative;
@@ -107,6 +154,7 @@ img {
   line-height: 1.1;
   text-transform: uppercase;
   transition: 0.3s ease-in-out;
+  animation: slideDownFade 0.6s ease-out forwards;
 }
 @media (min-width: 540px) {
   .banner__title-line {
@@ -118,13 +166,21 @@ img {
     font-size: 3.75rem;
   }
 }
+.banner__title-line--start {
+  opacity: 0;
+  animation-delay: 0.8s;
+}
 .banner__title-line--mid {
   width: fit-content;
   text-align: center;
+  opacity: 0;
+  animation-delay: 0.9s;
 }
 .banner__title-line--end {
   width: 100%;
   text-align: right;
+  opacity: 0;
+  animation-delay: 0.99s;
 }
 .banner__description {
   display: block;
@@ -135,6 +191,9 @@ img {
   text-align: left;
   margin-bottom: 32px;
   transition: 0.3s ease-in-out;
+  opacity: 0;
+  animation: slideDownFade 0.6s ease-out forwards;
+  animation-delay: 1.05s;
 }
 @media (min-width: 768px) {
   .banner__description {
@@ -148,6 +207,9 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 0.875rem;
+  opacity: 0;
+  animation: slideDownFade 0.6s ease-out forwards;
+  animation-delay: 1.1s;
 }
 @media (min-width: 768px) {
   .banner__actions {
@@ -216,6 +278,16 @@ img {
   overflow: hidden;
   background-color: var(--color-primary);
 }
+
+.banner__chess-horse,
+.banner__chess-pawn,
+.banner__texture,
+.banner__city,
+.banner__chess-queen,
+.banner__chess-king {
+  animation: fadeUp 0.6s ease-out forwards;
+  will-change: transform, opacity;
+}
 .banner__chess-horse {
   position: absolute;
   background: url(../assets/images/chess-3.webp);
@@ -229,6 +301,8 @@ img {
   left: calc(50% - 25px);
   rotate: -10deg;
   transition: 0.3s ease-in-out;
+  animation-delay: 0.15s;
+  transform: translateY(100%);
 }
 @media (min-width: 540px) {
   .banner__chess-horse {
@@ -258,6 +332,8 @@ img {
   z-index: 5;
   left: calc(50% + 150px);
   transition: 0.3s ease-in-out;
+  animation-delay: 0.3s;
+  transform: translateY(150%);
 }
 @media (min-width: 540px) {
   .banner__chess-pawn {
@@ -297,6 +373,8 @@ img {
     drop-shadow(8px 3px 0 #ffffff);
   background-size: auto 220px;
   transition: 0.3s ease-in-out;
+  animation-delay: 0s;
+  transform: translateY(100px);
 }
 @media (min-width: 540px) {
   .banner__city {
@@ -323,6 +401,8 @@ img {
   rotate: 8deg;
   left: calc(50% + 47px);
   transition: 0.3s ease-in-out;
+  animation-delay: 0.45s;
+  transform: translateY(100%);
 }
 @media (min-width: 540px) {
   .banner__chess-queen {
@@ -353,6 +433,8 @@ img {
   rotate: -6deg;
   left: calc(50% - 116px);
   transition: 0.3s ease-in-out;
+  animation-delay: 0.6s;
+  transform: translateY(100%);
 }
 @media (min-width: 540px) {
   .banner__chess-king {
@@ -380,6 +462,11 @@ img {
   aspect-ratio: 1 / 1;
   left: calc(50% - 310px / 2);
   transition: 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(100%);
+  transform-origin: center;
+  animation: popIn 0.6s ease-out forwards;
+  animation-delay: 0.75s;
 }
 @media (min-width: 540px) {
   .banner__circle {
@@ -400,6 +487,8 @@ img {
   mix-blend-mode: overlay;
   font-size: 3px;
   font-family: var(--font-accent);
+  transform-origin: center;
+  animation: circleRotate 20s linear infinite;
 }
 
 /* Строка */
@@ -409,6 +498,10 @@ img {
   background-color: var(--color-accent-1);
   padding-block: 0.625rem;
   transition: 0.3s ease-in-out;
+
+  transform: translateY(-100%);
+  opacity: 0;
+  animation: slideDown 0.6s ease-out forwards;
 }
 @media (min-width: 540px) {
   .marquee {
