@@ -819,11 +819,13 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   padding: 62px 24px 34px 72px;
+  cursor: grab;
 }
 @media (min-width: 768px) {
   .stages__item {
     padding: 1.25rem;
     padding-left: 72px;
+    cursor: default;
   }
 }
 .stages__text {
@@ -837,8 +839,10 @@ img {
     font-size: 1.25rem;
   }
 }
-.stages__item:nth-child(7) .stages__text {
-  width: 60%;
+@media (min-width: 768px) {
+  .stages__item:nth-child(7) .stages__text {
+    width: 60%;
+  }
 }
 @media (min-width: 1024px) {
   .stages__item:nth-child(7) .stages__text {
@@ -928,6 +932,141 @@ img {
   }
 }
 
+/* Игроки */
+.players {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 7.5rem;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .players {
+    margin-top: 12.5rem;
+    gap: 3.75rem;
+  }
+}
+.players__title {
+  width: fit-content;
+  display: block;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  font-weight: 400;
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+@media (min-width: 540px) {
+  .players__title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .players__title {
+    font-size: 3.375rem;
+  }
+}
+.players__list {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .players__list {
+    grid-auto-columns: calc((100% - 1.25rem) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .players__list {
+    grid-auto-columns: calc((100% - 1.25rem) / 3);
+  }
+}
+.players_controls {
+  position: relative;
+  margin-inline: auto;
+}
+@media (min-width: 1024px) {
+  .players_controls {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+  }
+}
+.players__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1.5rem;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  touch-action: pan-y;
+  cursor: grab;
+}
+@media (min-width: 1024px) {
+  .players__item {
+    padding-inline: 2.5rem;
+  }
+}
+.players__avatar {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.75rem;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+.players__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.players__name {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+}
+.players__rank {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 400;
+  opacity: 0.6;
+  text-align: center;
+}
+.players__link {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--color-accent-3);
+  padding: 0.75rem;
+  border: 1px solid var(--color-accent-3);
+  border-radius: 2rem;
+  transition: 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .players__link:hover {
+    background-color: var(--color-accent-3);
+    color: var(--color-secondary-50);
+  }
+}
+.players__link,
+.players__name,
+.players__rank {
+  user-select: none;
+}
+
 /* Футер */
 .footer {
   padding-top: 2.5rem;
@@ -980,7 +1119,15 @@ img {
   background-color: var(--color-secondary-900);
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+@media (min-width: 768px) {
+  .slider__button {
+    padding: 0.75rem;
+  }
+  .slider__button:hover {
+    background-color: var(--color-accent-2);
+  }
 }
 .slider__button--disabled {
   opacity: 0.2;
@@ -1012,6 +1159,23 @@ img {
 .slider__dot:last-child {
   margin-right: 0;
 }
-.stages__dot--active {
+.slider__dot--active {
+  opacity: 1;
+}
+.slider__pagination-number {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: fit-content;
+  align-items: center;
+  gap: 2px;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--color-secondary-900);
+}
+.slider__pagination-number * {
+  opacity: 0.6;
+}
+.slider__pagination-current {
   opacity: 1;
 }
