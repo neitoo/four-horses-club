@@ -78,6 +78,7 @@ img {
 }
 
 .reveal {
+  transition: 0.2s ease-in-out;
   will-change: transform, opacity;
 }
 
