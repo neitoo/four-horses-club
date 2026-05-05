@@ -14,6 +14,27 @@ function initSlider(root, config = {}) {
   let isAnimating = false;
   let isDragging = false;
 
+  let autoplayTimer = null;
+  let lastInteractionTime = Date.now();
+
+  function startAutoplay(interval = 4000) {
+    if (!config.autoplay) return;
+
+    clearInterval(autoplayTimer);
+
+    autoplayTimer = setInterval(() => {
+      const now = Date.now();
+
+      if (now - lastInteractionTime < interval) return;
+
+      goTo(currentIndex + 1);
+    }, 1000);
+  }
+
+  function markInteraction() {
+    lastInteractionTime = Date.now();
+  }
+
   function getGroups(nodes) {
     const map = new Map();
 
@@ -209,6 +230,8 @@ function initSlider(root, config = {}) {
   function goTo(index) {
     if (isAnimating) return;
 
+    markInteraction();
+
     if (config.loop) {
       currentIndex = index;
     } else {
@@ -218,8 +241,15 @@ function initSlider(root, config = {}) {
     update();
   }
 
-  prevBtn?.addEventListener("click", () => goTo(currentIndex - 1));
-  nextBtn?.addEventListener("click", () => goTo(currentIndex + 1));
+  prevBtn?.addEventListener("click", () => {
+    markInteraction();
+    goTo(currentIndex - 1);
+  });
+
+  nextBtn?.addEventListener("click", () => {
+    markInteraction();
+    goTo(currentIndex + 1);
+  });
 
   let startX = 0;
   let currentTranslate = 0;
@@ -262,6 +292,7 @@ function initSlider(root, config = {}) {
     if (!isDragging) return;
 
     isDragging = false;
+    markInteraction();
 
     if (isAnimating) return;
 
@@ -297,6 +328,7 @@ function initSlider(root, config = {}) {
   renderPagination();
   updatePosition(false);
   update();
+  startAutoplay(config.autoplayInterval || 4000);
 }
 
 const sliderConfigs = {
@@ -308,6 +340,8 @@ const sliderConfigs = {
   ".players__slider": {
     loop: true,
     paginationType: "numbers",
+    autoplay: true,
+    autoplayInterval: 4000,
   },
 };
 
